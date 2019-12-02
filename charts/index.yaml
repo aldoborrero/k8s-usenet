@@ -1,0 +1,146 @@
+apiVersion: v1
+entries:
+  bazarr:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.230053791+01:00"
+    description: Bazarr is a companion application to Sonarr and Radarr. It manages
+      and downloads subtitles based on your requirements.
+    digest: c17d93effc47b4c18c52eadaf3e7eb78dc6b2adea670f7ff7626c2d27f558a1a
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/bazarr
+    icon: https://www.bazarr.media/assets/img/logo.png
+    keywords:
+    - bazarr
+    - usenet
+    - bittorrent
+    name: bazarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/bazarr/
+    - https://github.com/morpheus65535/bazarr
+    type: application
+    urls:
+    - bazarr-1.0.0.tgz
+    version: 1.0.0
+  lazylibrarian:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.230581725+01:00"
+    description: LazyLibrarian is a SickBeard, CouchPotato, Headphones-like application
+      for ebooks, audiobooks and magazines
+    digest: 39fdb9853a04570c8d82ccc25e21b2a995961d280f9197a6147eb5ac83961928
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/lazylibrarian
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lazylibrarian-icon.png
+    keywords:
+    - lazylibrarian
+    - usenet
+    - bittorrent
+    name: lazylibrarian
+    sources:
+    - https://hub.docker.com/r/linuxserver/lazylibrarian/
+    - https://gitlab.com/LazyLibrarian/LazyLibrarian
+    type: application
+    urls:
+    - lazylibrarian-1.0.0.tgz
+    version: 1.0.0
+  lidarr:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.231071668+01:00"
+    description: Looks and smells like Sonarr but made for music.
+    digest: 980c5042daab631ce245e47fc196c033bc6c4e4397ce8556d8ee962417d11940
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/lidarr
+    icon: https://avatars1.githubusercontent.com/u/28475832?s=200&v=4
+    keywords:
+    - lidarr
+    - usenet
+    - bittorrent
+    name: lidarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/lidarr/
+    - https://github.com/lidarr/Lidarr
+    type: application
+    urls:
+    - lidarr-1.0.0.tgz
+    version: 1.0.0
+  mylar:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.231557174+01:00"
+    description: Radarr is a comic book downloading client
+    digest: f6a901a2421641073dca4dae5e1b35ad6dae36ed0f7b156f5972502489732bf1
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/mylar
+    icon: https://avatars3.githubusercontent.com/u/25025331?s=400&v=4
+    keywords:
+    - mylar
+    - usenet
+    - bittorrent
+    name: mylar
+    sources:
+    - https://hub.docker.com/r/linuxserver/mylar/
+    - https://github.com/evilhero/mylar
+    type: application
+    urls:
+    - mylar-1.0.0.tgz
+    version: 1.0.0
+  radarr:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.232083958+01:00"
+    description: Radarr is a movie downloading client
+    digest: 2be31d1d2cff549472bf92d00d2d5bc56bc8ca741cf3708a165d8c6f0a0a30b7
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/radarr
+    icon: https://avatars3.githubusercontent.com/u/25025331?s=400&v=4
+    keywords:
+    - radarr
+    - usenet
+    - bittorrent
+    name: radarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/radarr/
+    - https://github.com/Radarr/Radarr/
+    type: application
+    urls:
+    - radarr-1.0.0.tgz
+    version: 1.0.0
+  sabnzbd:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.23258756+01:00"
+    description: Sabnzbd makes Usenet as simple and streamlined as possible by automating
+      everything we can.
+    digest: c23666bfa011617ca24ba0b0a468eb0c1ff5e8208208ce8c961a4757f07e2e49
+    home: https://sabnzbd.org/
+    icon: https://sabnzbd.org/images/logo-full.svg
+    keywords:
+    - sabnzbd
+    - usenet
+    - bittorrent
+    name: sabnzbd
+    sources:
+    - https://hub.docker.com/r/linuxserver/sabnzbd/
+    - https://sabnzbd.org/
+    type: application
+    urls:
+    - sabnzbd-1.0.0.tgz
+    version: 1.0.0
+  sonarr:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-02T18:19:20.233113563+01:00"
+    description: Sonarr is a television show downloading client
+    digest: f43ca33274cf8aa6bca19cf836f3554f2dc4edf58da359ddcff45e8abc931e79
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/sonarr
+    icon: https://avatars1.githubusercontent.com/u/1082903?s=400&v=4
+    keywords:
+    - sonarr
+    - usenet
+    - bittorrent
+    name: sonarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/sonarr/
+    - https://sonarr.tv/
+    type: application
+    urls:
+    - sonarr-1.0.0.tgz
+    version: 1.0.0
+generated: "2019-12-02T18:19:20.229395453+01:00"

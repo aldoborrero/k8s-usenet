@@ -1,0 +1,21 @@
+{{- if and .Values.persistence.books.enabled (not .Values.persistence.books.existingClaim) }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "lazylibrarian.fullname" . }}-books
+  labels:
+    {{- include "lazylibrarian.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.books.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.books.size | quote }}
+{{- if .Values.persistence.books.storageClass }}
+{{- if (eq "-" .Values.persistence.books.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.books.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end -}}
