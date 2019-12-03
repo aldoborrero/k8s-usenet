@@ -26,14 +26,14 @@ helm repo add k8s-usenet https://raw.githubusercontent.com/aldoborrero/k8s-usene
 
 We need more useful Helm charts! Feel free to create a PR in order to contribute with any of the remaining services (or with a new one that is not listed below!):
 
-- [] [Ombi](https://ombi.io/): A simple way for your shared media users to request and download content - automatically!
-- [] [CouchPotato](https://couchpota.to/): A Video Library Manager for Movies
-- [] [SickRage](https://couchpota.to/): A Video Library Manager for Movie
-- [] [SickBeard](http://sickbeard.com/): The ultimate PVR application that searches for and manages your TV shows
-- [] [Sickgear](https://github.com/SickGear/SickGear): SickGear has proven the most reliable stable TV fork of the great Sick-Beard to fully automate TV enjoyment with innovation
-- [] [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd
-- [] [Ubooquity](https://vaemendis.net/ubooquity/): Ubooquity is a free home server for your comics and ebooks library
-- [] ...
+- [ ] [Ombi](https://ombi.io/): A simple way for your shared media users to request and download content - automatically!
+- [ ] [CouchPotato](https://couchpota.to/): A Video Library Manager for Movies
+- [ ] [SickRage](https://couchpota.to/): A Video Library Manager for Movie
+- [ ] [SickBeard](http://sickbeard.com/): The ultimate PVR application that searches for and manages your TV shows
+- [ ] [Sickgear](https://github.com/SickGear/SickGear): SickGear has proven the most reliable stable TV fork of the great Sick-Beard to fully automate TV enjoyment with innovation
+- [ ] [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd
+- [ ] [Ubooquity](https://vaemendis.net/ubooquity/): Ubooquity is a free home server for your comics and ebooks library
+- [ ] ...
 
 ## Acknowledgements
 
