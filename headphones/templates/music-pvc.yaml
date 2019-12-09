@@ -1,0 +1,21 @@
+{{- if and .Values.persistence.music.enabled (not .Values.persistence.music.existingClaim) }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "headphones.fullname" . }}-music
+  labels:
+    {{- include "headphones.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.music.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.music.size | quote }}
+{{- if .Values.persistence.music.storageClass }}
+{{- if (eq "-" .Values.persistence.music.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.music.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end -}}

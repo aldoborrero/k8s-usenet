@@ -21,6 +21,7 @@ helm repo add k8s-usenet https://raw.githubusercontent.com/aldoborrero/k8s-usene
 - [Radarr](https://github.com/Radarr/Radarr): A fork of Sonarr to work with movies à la Couchpotato.
 - [Sabnzbd](https://sabnzbd.org/): Free and easy binary newsreader.
 - [Sonarr](https://github.com/Sonarr/Sonarr): Smart PVR for newsgroup and bittorrent users.
+- [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd.
 
 ## Work in progress...
 
@@ -31,7 +32,6 @@ We need more useful Helm charts! Feel free to create a PR in order to contribute
 - [ ] [SickRage](https://couchpota.to/): A Video Library Manager for Movie
 - [ ] [SickBeard](http://sickbeard.com/): The ultimate PVR application that searches for and manages your TV shows
 - [ ] [Sickgear](https://github.com/SickGear/SickGear): SickGear has proven the most reliable stable TV fork of the great Sick-Beard to fully automate TV enjoyment with innovation
-- [ ] [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd
 - [ ] [Ubooquity](https://vaemendis.net/ubooquity/): Ubooquity is a free home server for your comics and ebooks library
 - [ ] ...
 
