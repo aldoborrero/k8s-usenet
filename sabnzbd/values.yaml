@@ -69,7 +69,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: sabnzbd.local
-      paths: []
+      paths: ["/"]
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

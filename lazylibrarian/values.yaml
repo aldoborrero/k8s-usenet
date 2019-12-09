@@ -69,7 +69,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: lazylibrarian.local
-      paths: []
+      paths: ["/"]
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

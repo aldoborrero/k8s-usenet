@@ -64,6 +64,11 @@ spec:
             {{- if .Values.persistence.downloads.subPath }}
               subPath: {{ .Values.persistence.downloads.subPath }}
             {{- end }}
+            - mountPath: /incomplete-downloads
+              name: incomplete-downloads
+            {{- if .Values.persistence.incompleteDownloads.subPath }}
+              subPath: {{ .Values.persistence.incompleteDownloads.subPath }}
+            {{- end }}
             {{- range .Values.persistence.extraExistingClaimMounts }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}
@@ -83,6 +88,13 @@ spec:
       {{- if .Values.persistence.downloads.enabled }}
         persistentVolumeClaim:
           claimName: {{ if .Values.persistence.downloads.existingClaim }}{{ .Values.persistence.downloads.existingClaim }}{{- else }}{{ template "sabnzbd.fullname" . }}-downloads{{- end }}
+      {{- else }}
+        emptyDir: {}
+      {{- end }}
+      - name: incomplete-downloads
+      {{- if .Values.persistence.incompleteDownloads.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ if .Values.persistence.incompleteDownloads.existingClaim }}{{ .Values.persistence.incompleteDownloads.existingClaim }}{{- else }}{{ template "sabnzbd.fullname" . }}-incomplete-downloads{{- end }}
       {{- else }}
         emptyDir: {}
       {{- end }}
