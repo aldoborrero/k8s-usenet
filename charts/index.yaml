@@ -3,10 +3,10 @@ entries:
   bazarr:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.230053791+01:00"
+    created: "2019-12-09T23:47:09.309889888+01:00"
     description: Bazarr is a companion application to Sonarr and Radarr. It manages
       and downloads subtitles based on your requirements.
-    digest: c17d93effc47b4c18c52eadaf3e7eb78dc6b2adea670f7ff7626c2d27f558a1a
+    digest: d10d1d8ad523141a679b1a9034d2c41eb74f849857a8411b323ab87d71bd1564
     home: https://github.com/aldoborrero/k8s-usenet/tree/master/bazarr
     icon: https://www.bazarr.media/assets/img/logo.png
     keywords:
@@ -21,13 +21,33 @@ entries:
     urls:
     - bazarr-1.0.0.tgz
     version: 1.0.0
+  headphones:
+  - apiVersion: v2
+    appVersion: amd64-latest
+    created: "2019-12-09T23:47:09.310363382+01:00"
+    description: Headphones is an automatic music downloader for SABnzbd
+    digest: fdf08a447082eb16daa219f7474c81a3de2bf81b98a721971edce1d5896e09b6
+    home: https://github.com/aldoborrero/k8s-usenet/tree/master/headphones
+    icon: https://github.com/rembo10/headphones/raw/master/data/images/headphoneslogo.png
+    keywords:
+    - headphones
+    - usenet
+    - bittorrent
+    name: headphones
+    sources:
+    - https://hub.docker.com/r/linuxserver/headphones/
+    - https://github.com/rembo10/headphones
+    type: application
+    urls:
+    - headphones-1.0.0.tgz
+    version: 1.0.0
   lazylibrarian:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.230581725+01:00"
+    created: "2019-12-09T23:47:09.310903922+01:00"
     description: LazyLibrarian is a SickBeard, CouchPotato, Headphones-like application
       for ebooks, audiobooks and magazines
-    digest: 39fdb9853a04570c8d82ccc25e21b2a995961d280f9197a6147eb5ac83961928
+    digest: 42b4d783a01b120df2ab4326b6932296a05ffa97c204a6dc514f35abbd7a7989
     home: https://github.com/aldoborrero/k8s-usenet/tree/master/lazylibrarian
     icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lazylibrarian-icon.png
     keywords:
@@ -45,9 +65,9 @@ entries:
   lidarr:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.231071668+01:00"
+    created: "2019-12-09T23:47:09.311385885+01:00"
     description: Looks and smells like Sonarr but made for music.
-    digest: 980c5042daab631ce245e47fc196c033bc6c4e4397ce8556d8ee962417d11940
+    digest: 4b7d3ecfea194bf32cd79fde77361a18454833168373dbb9b40f17614b5d0c8c
     home: https://github.com/aldoborrero/k8s-usenet/tree/master/lidarr
     icon: https://avatars1.githubusercontent.com/u/28475832?s=200&v=4
     keywords:
@@ -65,9 +85,9 @@ entries:
   mylar:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.231557174+01:00"
+    created: "2019-12-09T23:47:09.311851943+01:00"
     description: Radarr is a comic book downloading client
-    digest: f6a901a2421641073dca4dae5e1b35ad6dae36ed0f7b156f5972502489732bf1
+    digest: 6529883c4097a7ce7542fc74689cad5d522740a624e8a471ef321828c6e4082e
     home: https://github.com/aldoborrero/k8s-usenet/tree/master/mylar
     icon: https://avatars3.githubusercontent.com/u/25025331?s=400&v=4
     keywords:
@@ -85,9 +105,9 @@ entries:
   radarr:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.232083958+01:00"
+    created: "2019-12-09T23:47:09.312345601+01:00"
     description: Radarr is a movie downloading client
-    digest: 2be31d1d2cff549472bf92d00d2d5bc56bc8ca741cf3708a165d8c6f0a0a30b7
+    digest: 5b1f17ea415141472f5943e28d394eab6f90d02f8d7b1c59e4579e530a863c1f
     home: https://github.com/aldoborrero/k8s-usenet/tree/master/radarr
     icon: https://avatars3.githubusercontent.com/u/25025331?s=400&v=4
     keywords:
@@ -105,10 +125,10 @@ entries:
   sabnzbd:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.23258756+01:00"
+    created: "2019-12-09T23:47:09.312827687+01:00"
     description: Sabnzbd makes Usenet as simple and streamlined as possible by automating
       everything we can.
-    digest: c23666bfa011617ca24ba0b0a468eb0c1ff5e8208208ce8c961a4757f07e2e49
+    digest: 62381fa562b7dac4f66939b21fa165cc65b62aab6aad0f5259adc504789a5142
     home: https://sabnzbd.org/
     icon: https://sabnzbd.org/images/logo-full.svg
     keywords:
@@ -126,9 +146,9 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: amd64-latest
-    created: "2019-12-02T18:19:20.233113563+01:00"
+    created: "2019-12-09T23:47:09.313910385+01:00"
     description: Sonarr is a television show downloading client
-    digest: f43ca33274cf8aa6bca19cf836f3554f2dc4edf58da359ddcff45e8abc931e79
+    digest: 73fe463f527cf09933fbea77e8c212902cc069618ee596cb428efa84f2ab920d
     home: https://github.com/aldoborrero/k8s-usenet/tree/master/sonarr
     icon: https://avatars1.githubusercontent.com/u/1082903?s=400&v=4
     keywords:
@@ -143,4 +163,4 @@ entries:
     urls:
     - sonarr-1.0.0.tgz
     version: 1.0.0
-generated: "2019-12-02T18:19:20.229395453+01:00"
+generated: "2019-12-09T23:47:09.309279614+01:00"
