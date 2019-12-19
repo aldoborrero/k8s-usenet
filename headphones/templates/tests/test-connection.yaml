@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "headphones.fullname" . }}-test-connection"
   labels:
-{{ include "headphones.labels" . | nindent 4 }}
+    {{- include "headphones.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:

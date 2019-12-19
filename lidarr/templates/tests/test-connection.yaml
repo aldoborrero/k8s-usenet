@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "lidarr.fullname" . }}-test-connection"
   labels:
-{{ include "lidarr.labels" . | nindent 4 }}
+    {{- include "lidarr.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:

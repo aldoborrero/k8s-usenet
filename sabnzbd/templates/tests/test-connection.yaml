@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "sabnzbd.fullname" . }}-test-connection"
   labels:
-{{ include "sabnzbd.labels" . | nindent 4 }}
+    {{- include "sabnzbd.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:

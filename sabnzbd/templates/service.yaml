@@ -41,8 +41,8 @@ spec:
       port: {{ .Values.service.port }}
       protocol: TCP
       targetPort: http
-{{ if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
+      {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
       nodePort: {{.Values.service.nodePort}}
-{{ end }}
+      {-{ end }}
   selector:
     {{- include "sabnzbd.selectorLabels" . | nindent 4 }}

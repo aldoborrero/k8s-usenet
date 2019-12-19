@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "lazylibrarian.fullname" . }}-test-connection"
   labels:
-{{ include "lazylibrarian.labels" . | nindent 4 }}
+    {{- include "lazylibrarian.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:
