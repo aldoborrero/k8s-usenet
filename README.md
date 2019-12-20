@@ -20,6 +20,7 @@ helm repo add k8s-usenet https://raw.githubusercontent.com/aldoborrero/k8s-usene
 - [Mylar](https://github.com/evilhero/mylar): An automated Comic Book downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents.
 - [Radarr](https://github.com/Radarr/Radarr): A fork of Sonarr to work with movies à la Couchpotato.
 - [Sabnzbd](https://sabnzbd.org/): Free and easy binary newsreader.
+- [Medusa](https://pymedusa.com/): Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 - [Sonarr](https://github.com/Sonarr/Sonarr): Smart PVR for newsgroup and bittorrent users.
 - [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd.
 
@@ -29,9 +30,6 @@ We need more useful Helm charts! Feel free to create a PR in order to contribute
 
 - [ ] [Ombi](https://ombi.io/): A simple way for your shared media users to request and download content - automatically!
 - [ ] [CouchPotato](https://couchpota.to/): A Video Library Manager for Movies
-- [ ] [SickRage](https://couchpota.to/): A Video Library Manager for Movie
-- [ ] [SickBeard](http://sickbeard.com/): The ultimate PVR application that searches for and manages your TV shows
-- [ ] [Sickgear](https://github.com/SickGear/SickGear): SickGear has proven the most reliable stable TV fork of the great Sick-Beard to fully automate TV enjoyment with innovation
 - [ ] [Ubooquity](https://vaemendis.net/ubooquity/): Ubooquity is a free home server for your comics and ebooks library
 - [ ] ...
 
