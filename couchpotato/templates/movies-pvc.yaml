@@ -1,0 +1,21 @@
+{{- if and .Values.persistence.movies.enabled (not .Values.persistence.movies.existingClaim) }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "couchpotato.fullname" . }}-movies
+  labels:
+    {{- include "couchpotato.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.movies.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.movies.size | quote }}
+{{- if .Values.persistence.movies.storageClass }}
+{{- if (eq "-" .Values.persistence.movies.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.movies.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end -}}
