@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "lidarr.fullname" . }}-env-config
+  labels:
+    {{- include "lidarr.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.lidarr }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

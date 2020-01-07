@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "organizr.fullname" . }}-env-config
+  labels:
+    {{- include "organizr.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.organizr }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "couchpotato.fullname" . }}-env-config
+  labels:
+    {{- include "couchpotato.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.couchpotato }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "nzbget.fullname" . }}-env-config
+  labels:
+    {{- include "nzbget.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.nzbget }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

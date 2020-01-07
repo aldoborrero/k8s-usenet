@@ -15,11 +15,36 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-timezone: UTC
-puid: 1001
-pgid: 1001
-umaskSet: 022
-portNumber: 5050
+# Sonarr configuration.
+# For details about the options, see: https://github.com/linuxserver/docker-couchpotato#parameters
+#
+couchpotato:
+  # Specify a timezone to us
+  tz: UTC
+
+  # Control permissions of files and directories created by Bazarr
+  umask_set: 022
+
+  # Specify which user id to use
+  puid: 1001
+
+  # Specify which group id to use
+  pgid: 1001
+
+# Probes configuration.
+#
+probes:
+  liveness:
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 60
+    failureThreshold: 3
+
+  readiness:
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 10
+    failureThreshold: 3
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -28,10 +53,12 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name:
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -62,7 +89,8 @@ service:
 
 ingress:
   enabled: false
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "sonarr.fullname" . }}-env-config
+  labels:
+    {{- include "sonarr.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.sonarr }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

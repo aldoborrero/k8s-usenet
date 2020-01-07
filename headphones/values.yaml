@@ -15,10 +15,36 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-timezone: UTC
-puid: 1001
-pgid: 1001
-portNumber: 8181
+# Headphones configuration.
+# For details about the options, see: https://github.com/linuxserver/docker-headphones#parameters
+#
+headphones:
+  # Specify a timezone to us
+  tz: UTC
+
+  # Control permissions of files and directories created by Bazarr
+  umask_set: 022
+
+  # Specify which user id to use
+  puid: 1001
+
+  # Specify which group id to use
+  pgid: 1001
+
+# Probes configuration.
+#
+probes:
+  liveness:
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 60
+    failureThreshold: 3
+
+  readiness:
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 10
+    failureThreshold: 3
 
 serviceAccount:
   # Specifies whether a service account should be created

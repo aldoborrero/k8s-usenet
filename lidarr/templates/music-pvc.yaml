@@ -11,11 +11,11 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.audio.size | quote }}
-{{- if .Values.persistence.audio.storageClass }}
-{{- if (eq "-" .Values.persistence.audio.storageClass) }}
+  {{- if .Values.persistence.audio.storageClass }}
+  {{- if (eq "-" .Values.persistence.audio.storageClass) }}
   storageClassName: ""
-{{- else }}
+  {{- else }}
   storageClassName: "{{ .Values.persistence.audio.storageClass }}"
-{{- end }}
-{{- end }}
+  {{- end }}
+  {{- end }}
 {{- end -}}

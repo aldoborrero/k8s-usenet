@@ -11,11 +11,11 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.movies.size | quote }}
-{{- if .Values.persistence.movies.storageClass }}
-{{- if (eq "-" .Values.persistence.movies.storageClass) }}
+  {{- if .Values.persistence.movies.storageClass }}
+  {{- if (eq "-" .Values.persistence.movies.storageClass) }}
   storageClassName: ""
-{{- else }}
+  {{- else }}
   storageClassName: "{{ .Values.persistence.movies.storageClass }}"
-{{- end }}
-{{- end }}
+  {{- end }}
+  {{- end }}
 {{- end -}}

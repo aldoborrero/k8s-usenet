@@ -15,10 +15,36 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-timezone: UTC
-puid: 1001
-pgid: 1001
-portNumber: 8080
+# Sabnzbd configuration.
+# For details about the options, see: https://github.com/linuxserver/docker-sabnzbd#parameters
+#
+sabnzbd:
+  # Specify a timezone to us
+  tz: UTC
+
+  # Control permissions of files and directories created by Bazarr
+  umask_set: 022
+
+  # Specify which user id to use
+  puid: 1001
+
+  # Specify which group id to use
+  pgid: 1001
+
+# Probes configuration.
+#
+probes:
+  liveness:
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 60
+    failureThreshold: 3
+
+  readiness:
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 10
+    failureThreshold: 3
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -78,7 +104,7 @@ ingress:
 persistence:
   config:
     enabled: true
-    ## sonarr configuration data Persistent Volume Storage Class
+    ## sabnzbd configuration data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
     ## If undefined (the default) or set to null, no storageClassName spec is
@@ -94,7 +120,24 @@ persistence:
     size: 1Gi
   downloads:
     enabled: true
-    ## sonarr downloads volume configuration
+    ## sabnzbd downloads volume configuration
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    # storageClass: "-"
+    ##
+    ## If you want to reuse an existing claim, you can pass the name of the PVC using
+    ## the existingClaim variable
+    # existingClaim: your-claim
+    # subPath: some-subpath
+    accessMode: ReadWriteOnce
+    size: 10Gi
+  incompleteDownloads:
+    enabled: true
+    ## sabnzbd downloads volume configuration
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
     ## If undefined (the default) or set to null, no storageClassName spec is

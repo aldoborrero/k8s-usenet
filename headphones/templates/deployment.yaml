@@ -29,46 +29,42 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "headphones.fullname" . }}-env-config
           ports:
             - name: http
-              containerPort: {{ .Values.portNumber }}
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 30
-            periodSeconds: 30
-            timeoutSeconds: 60
-            failureThreshold: 3
+            initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
+            periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
+            timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
+            failureThreshold: {{ .Values.probes.liveness.failureThreshold }}
           readinessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 30
-            periodSeconds: 30
-            timeoutSeconds: 60
-            failureThreshold: 3
-          env:
-            - name: TZ
-              value: "{{ .Values.timezone }}"
-            - name: PUID
-              value: "{{ .Values.puid }}"
-            - name: PGID
-              value: "{{ .Values.pgid }}"
+            initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
+            periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
+            timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
+            failureThreshold: {{ .Values.probes.readiness.failureThreshold }}
           volumeMounts:
             - mountPath: /config
               name: config
             - mountPath: /downloads
               name: downloads
-            {{- if .Values.persistence.downloads.subPath }}
+              {{- if .Values.persistence.downloads.subPath }}
               subPath: {{ .Values.persistence.downloads.subPath }}
-            {{- end }}
+              {{- end }}
             - mountPath: /music
               name: music
-            {{- if .Values.persistence.music.subPath }}
+              {{- if .Values.persistence.music.subPath }}
               subPath: {{ .Values.persistence.music.subPath }}
-            {{- end }}
+              {{- end }}
             {{- range .Values.persistence.extraExistingClaimMounts }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}
@@ -78,26 +74,26 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
       - name: config
-      {{- if .Values.persistence.config.enabled }}
+        {{- if .Values.persistence.config.enabled }}
         persistentVolumeClaim:
           claimName: {{ if .Values.persistence.config.existingClaim }}{{ .Values.persistence.config.existingClaim }}{{- else }}{{ template "headphones.fullname" . }}-config{{- end }}
-      {{- else }}
+        {{- else }}
         emptyDir: {}
-      {{- end }}
+        {{- end }}
       - name: downloads
-      {{- if .Values.persistence.downloads.enabled }}
+        {{- if .Values.persistence.downloads.enabled }}
         persistentVolumeClaim:
           claimName: {{ if .Values.persistence.downloads.existingClaim }}{{ .Values.persistence.downloads.existingClaim }}{{- else }}{{ template "headphones.fullname" . }}-downloads{{- end }}
-      {{- else }}
+        {{- else }}
         emptyDir: {}
-      {{- end }}
+        {{- end }}
       - name: music
-      {{- if .Values.persistence.music.enabled }}
+        {{- if .Values.persistence.music.enabled }}
         persistentVolumeClaim:
           claimName: {{ if .Values.persistence.music.existingClaim }}{{ .Values.persistence.music.existingClaim }}{{- else }}{{ template "headphones.fullname" . }}-music{{- end }}
-      {{- else }}
+        {{- else }}
         emptyDir: {}
-      {{- end }}
+        {{- end }}
       {{- range .Values.persistence.extraExistingClaimMounts }}
       - name: {{ .name }}
         persistentVolumeClaim:

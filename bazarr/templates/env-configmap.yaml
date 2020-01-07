@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "bazarr.fullname" . }}-config
+  labels:
+    {{- include "bazarr.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.bazarr }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "sabnzbd.fullname" . }}-env-config
+  labels:
+    {{- include "sabnzbd.labels" . | nindent 4 }}
+data:
+  {{- range $key, $val := .Values.sabnzbd }}
+  {{ $key | upper }}: {{ $val | quote }}
+  {{- end}}

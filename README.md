@@ -15,23 +15,23 @@ helm repo add k8s-usenet https://raw.githubusercontent.com/aldoborrero/k8s-usene
 ## Current supported services
 
 - [Bazarr](https://www.bazarr.media/): A companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements.
+- [CouchPotato](https://couchpota.to/): A Video Library Manager for Movies.
+- [Jackett](https://github.com/Jackett/Jackett): API Support for your favorite torrent trackers.
+- [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd.
 - [LazyLibrarian](https://lazylibrarian.gitlab.io/): LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.
 - [Lidarr](https://github.com/lidarr/lidarr): Looks and smells like Sonarr but made for music.
+- [Medusa](https://pymedusa.com/): Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 - [Mylar](https://github.com/evilhero/mylar): An automated Comic Book downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents.
+- [Nzbget](https://nzbget.net/): The most efficient usenet downloader.
+- [Organizr](https://github.com/causefx/Organizr): HTPC/Homelab Services Organizer.
 - [Radarr](https://github.com/Radarr/Radarr): A fork of Sonarr to work with movies à la Couchpotato.
 - [Sabnzbd](https://sabnzbd.org/): Free and easy binary newsreader.
-- [Medusa](https://pymedusa.com/): Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 - [Sonarr](https://github.com/Sonarr/Sonarr): Smart PVR for newsgroup and bittorrent users.
-- [Headphones](https://github.com/rembo10/headphones): Automatic music downloader for SABnzbd.
+- [Transmission](https://transmissionbt.com/): A fast, easy and free Bittorrent client.
 
 ## Work in progress...
 
-We need more useful Helm charts! Feel free to create a PR in order to contribute with any of the remaining services (or with a new one that is not listed below!):
-
-- [ ] [Ombi](https://ombi.io/): A simple way for your shared media users to request and download content - automatically!
-- [ ] [CouchPotato](https://couchpota.to/): A Video Library Manager for Movies
-- [ ] [Ubooquity](https://vaemendis.net/ubooquity/): Ubooquity is a free home server for your comics and ebooks library
-- [ ] ...
+We need more useful Helm charts! Feel free to create a PR in order to contribute with a new one service that is not listed above!
 
 ## Acknowledgements
 
