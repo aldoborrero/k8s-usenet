@@ -31,7 +31,7 @@ helm repo add k8s-usenet https://raw.githubusercontent.com/aldoborrero/k8s-usene
 
 ## Work in progress...
 
-We need more useful Helm charts! Feel free to create a PR in order to contribute with a new one service that is not listed above!
+We need more useful Helm charts! Feel free to create a PR in order to contribute with a new service that is not listed above!
 
 ## Acknowledgements
 
