@@ -6,6 +6,7 @@ replicaCount: 1
 
 image:
   repository: organizrtools/organizr-v2
+  tag: amd64-latest
   pullPolicy: Always
 
 strategyType: Recreate

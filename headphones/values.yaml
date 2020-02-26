@@ -6,6 +6,7 @@ replicaCount: 1
 
 image:
   repository: linuxserver/headphones
+  tag: amd64-latest
   pullPolicy: Always
 
 strategyType: Recreate
