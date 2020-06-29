@@ -59,6 +59,9 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: config
+              {{- if .Values.persistence.config.subPath }}
+              subPath: {{ .Values.persistence.config.subPath }}
+              {{- end }}
             {{- range .Values.persistence.extraExistingClaimMounts }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}

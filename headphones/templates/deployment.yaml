@@ -55,6 +55,9 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: config
+              {{- if .Values.persistence.config.subPath }}
+              subPath: {{ .Values.persistence.config.subPath }}
+              {{- end }}
             - mountPath: /downloads
               name: downloads
               {{- if .Values.persistence.downloads.subPath }}
