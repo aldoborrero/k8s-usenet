@@ -72,6 +72,11 @@ spec:
               {{- if .Values.persistence.incompleteDownloads.subPath }}
               subPath: {{ .Values.persistence.incompleteDownloads.subPath }}
               {{- end }}
+            - mountPath: /watch
+              name: watch
+              {{- if .Values.persistence.watch.subPath }}
+              subPath: {{ .Values.persistence.watch.subPath }}
+              {{- end }}
             {{- range .Values.persistence.extraExistingClaimMounts }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}
@@ -98,6 +103,13 @@ spec:
         {{- if .Values.persistence.incompleteDownloads.enabled }}
         persistentVolumeClaim:
           claimName: {{ if .Values.persistence.incompleteDownloads.existingClaim }}{{ .Values.persistence.incompleteDownloads.existingClaim }}{{- else }}{{ template "transmission.fullname" . }}-incomplete-downloads{{- end }}
+        {{- else }}
+        emptyDir: {}
+        {{- end }}
+      - name: watch
+        {{- if .Values.persistence.watch.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ if .Values.persistence.watch.existingClaim }}{{ .Values.persistence.watch.existingClaim }}{{- else }}{{ template "transmission.fullname" . }}-watch{{- end }}
         {{- else }}
         emptyDir: {}
         {{- end }}
