@@ -87,6 +87,10 @@ spec:
             {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", 'transmission-daemon']
       volumes:
       - name: config
         {{- if .Values.persistence.config.enabled }}
