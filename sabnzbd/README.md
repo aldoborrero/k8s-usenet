@@ -62,11 +62,11 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | `persistence.downloads.existingClaim`  | Use an existing PVC to persist data                                                           | `nil`                 |
 | `persistence.downloads.storageClass`   | Type of persistent volume claim                                                               | `-`                   |
 | `persistence.downloads.accessMode`     | Persistence access mode                                                                       | `ReadWriteOnce`       |
-| `persistence.tv.enabled`               | Use persistent volume for tv show persistence                                                 | `true`                |
-| `persistence.tv.size`                  | Size of persistent volume claim                                                               | `10Gi`                |
-| `persistence.tv.existingClaim`         | Use an existing PVC to persist data                                                           | `nil`                 |
-| `persistence.tv.storageClass`          | Type of persistent volume claim                                                               | `-`                   |
-| `persistence.tv.accessMode`            | Persistence access mode                                                                       | `ReadWriteOnce`       |
+| `persistence.incompleteDownloads.enabled`               | Use persistent volume for incomplete downloads persistence                                                 | `true`                |
+| `persistence.incompleteDownloads.size`                  | Size of persistent volume claim                                                               | `10Gi`                |
+| `persistence.incompleteDownloads.existingClaim`         | Use an existing PVC to persist data                                                           | `nil`                 |
+| `persistence.incompleteDownloads.storageClass`          | Type of persistent volume claim                                                               | `-`                   |
+| `persistence.incompleteDownloads.accessMode`            | Persistence access mode                                                                       | `ReadWriteOnce`       |
 | `persistence.extraExistingClaimMounts` | Optionally add multiple existing claims                                                       | `[]`                  |
 | `resources`                            | CPU/Memory resource requests/limits                                                           | `{}`                  |
 | `nodeSelector`                         | Node labels for pod assignment                                                                | `{}`                  |
