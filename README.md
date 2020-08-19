@@ -27,6 +27,7 @@ helm repo add k8s-usenet https://raw.githubusercontent.com/aldoborrero/k8s-usene
 - [Radarr](https://github.com/Radarr/Radarr): A fork of Sonarr to work with movies à la Couchpotato.
 - [Sabnzbd](https://sabnzbd.org/): Free and easy binary newsreader.
 - [Sonarr](https://github.com/Sonarr/Sonarr): Smart PVR for newsgroup and bittorrent users.
+- [Syncthing](https://syncthing.net/): Continuous file synchronization program.
 - [Transmission](https://transmissionbt.com/): A fast, easy and free Bittorrent client.
 
 ## Work in progress...
