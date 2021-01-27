@@ -36,6 +36,9 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+            - name: sync
+              containerPort: {{ .Values.service.syncPort }}
+              protocol: TCP
           volumeMounts:
             - mountPath: /config
               name: config

@@ -72,7 +72,6 @@ service:
   port: 8384
 
   syncPort: 22000
-  discoveryPort: 21027
 
   ## Specify the nodePort value for the LoadBalancer and NodePort service types.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport

@@ -44,5 +44,9 @@ spec:
       {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
       nodePort: {{ .Values.service.nodePort }}
       {{- end }}
+    - name: sync
+      port: {{ .Values.service.syncPort }}
+      protocol: TCP
+      targetPort: sync
   selector:
     {{- include "syncthing.selectorLabels" . | nindent 4 }}

@@ -42,6 +42,7 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | `pgid`                                 | process groupID the syncthing instance should run as                                            | `1001`                |
 | `service.type`                         | Kubernetes service type for the syncthing GUI                                                   | `ClusterIP`           |
 | `service.port`                         | Kubernetes port where the syncthing GUI is exposed                                              | `8384`                |
+| `service.syncPort`                     | Kubernetes port where the sync is exposed                                              | `22000`             |
 | `service.annotations`                  | Service annotations for the syncthing GUI                                                       | `{}`                  |
 | `service.labels`                       | Custom labels                                                                                 | `{}`                  |
 | `service.loadBalancerIP`               | Loadbalance IP for the syncthing GUI                                                            | `{}`                  |
