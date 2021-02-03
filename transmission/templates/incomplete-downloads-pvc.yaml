@@ -1,0 +1,21 @@
+{{- if and .Values.persistence.downloads.enabled (not .Values.persistence.downloads.existingClaim) }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "transmission.fullname" . }}-incomplete-downloads
+  labels:
+    {{- include "transmission.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.incompleteDownloads.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.incompleteDownloads.size | quote }}
+  {{- if .Values.persistence.incompleteDownloads.storageClass }}
+  {{- if (eq "-" .Values.persistence.incompleteDownloads.storageClass) }}
+  storageClassName: ""
+  {{- else }}
+  storageClassName: "{{ .Values.persistence.incompleteDownloads.storageClass }}"
+  {{- end }}
+  {{- end }}
+{{- end -}}
